@@ -1,0 +1,96 @@
+{
+    "coinbase_tags" : {
+        "coins4u" : {
+            "name" : "coins4u.cc",
+            "link" : "https://coins4u.cc"
+        },
+        "coolminerz.hopto.org" : {
+            "name" : "coolminerz.hopto.org",
+            "link" : "https://coolminerz.hopto.org"
+        },
+        "cryptoverse": {
+            "name": "cryptoverse.eu",
+            "link": "https://pool.cryptoverse.eu/"
+        },
+        "fastpool": {
+            "name": "fastpool.xyz",
+            "link": "https://fastpool.xyz/but"
+        },
+        "fpool": {
+            "name": "fpool.eu",
+            "link": "https://fpool.eu"
+        },
+        "mecrypto.club": {
+            "name": "mecrypto.club",
+            "link": "https://pool.mecrypto.club/BUTK-gr"
+        },
+        "Mining4People" : {
+            "name" : "Mining4People",
+            "link" : "https://mining4people.com/#butkoin-sha256d-pplns"
+        },
+        "murkapool": {
+            "name" : "murkapool.it",
+            "link" : "https://murkapool.it"
+        },
+        "novaminer": {
+            "name": "novaminer.xyz",
+            "link": "https://novaminer.xyz#butk"
+        },
+        "rwinfo": {
+            "name": "rwinfo.club",
+            "link": "https://poolx.rwinfo.club"
+        },
+        "phalanxmine": {
+            "name" : "phalanxmine.com",
+            "link" : "https://pool.phalanxmine.com"
+        },
+        "PoolMine.xyz" : {
+            "name" : "PoolMine.xyz",
+            "link" : "https://poolmine.xyz"
+        },
+        "suprnova": {
+            "name": "suprnova.cc",
+            "link": "https://butk-gr.suprnova.cc"
+        },
+        "weikeji": {
+            "name": "weikeji.icu",
+            "link": "https://but.weikeji.icu"
+        },
+        "zergpool": {
+            "name": "zergpool.com",
+            "link": "https://zergpool.com"
+        },
+        "zpool": {
+            "name": "zpool.ca",
+            "link": "https://zpool.ca"
+        }
+    },
+
+    "payout_addresses" : {
+        "XcMPD1AF8GZ347nJgPfWzj6QsWn1Jouc1H" : {
+            "name" : "Mining4People",
+            "link" : "https://mining4people.com/#butkoin-sha256d-pplns"
+        },
+        "Xnxa68MPGqYgLiyyvVkAGyLB3HK6b8oQaG" : {
+            "name" : "PoolMine.xyz",
+            "link" : "https://poolmine.xyz"
+        },
+        "XhXfSkPa5GbSzPh18PDyfABHr23iWUUuSW" : {
+            "name" : "PoolMine.xyz",
+            "link" : "https://poolmine.xyz"
+        },
+        "XfyXbMxiMcnAnczH8wSj1WQD9MugxALFur" : {
+            "name" : "suprnova.cc",
+            "link" : "https://suprnova.cc"
+        },
+        "XngbJPUXJagbmoEA1c5kEpuXhTb2vBGeoY" : {
+            "name" : "zergpool.com",
+            "link" : "https://zergpool.com"
+        },
+        "XcyEUyJBfviuo76EYSnYhRC3VmVThFEUej": {
+            "name": "zpool.ca",
+            "link": "https://zpool.ca"
+        }
+
+    }
+}
