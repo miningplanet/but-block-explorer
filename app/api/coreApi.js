@@ -545,7 +545,7 @@ function getMempoolStats() {
 				sizeBucketTxCounts[sizeBucketIndex]++;
 			}
 
-			summary["averageFee"] = summary["totalFees"] / summary["count"];
+			summary["averageFee"] = summary["totalFees"] / (summary["count"]-1);
 			summary["averageFeePerByte"] = summary["totalFees"] / summary["totalBytes"];
 
 			summary["satoshiPerByteBucketMaxima"] = satoshiPerByteBucketMaxima;

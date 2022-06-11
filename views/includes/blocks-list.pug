@@ -7,9 +7,10 @@ div(class="table-responsive")
 				th(class="data-header") Timestamp (utc)
 				th(class="data-header text-right") Age
 				th(class="data-header") Miner
-				th(class="data-header text-right") Transactions
+				th(class="data-header") Algorithm
+				th(class="data-header text-right") Tx.
 				th(class="data-header text-right") Average Fee
-				th(class="data-header text-right") Size (bytes)
+				th(class="data-header text-right") Size (b)
 
 				if (blocks && blocks.length > 0 && blocks[0].weight)
 					th(class="data-header text-right") Weight (wu)
@@ -34,11 +35,12 @@ div(class="table-responsive")
 							else
 								span ?
 
+						td(class="data-cell monospace text-right") #{block.algo}
 						
 						td(class="data-cell monospace text-right") #{block.tx.length.toLocaleString()}
 
 						td(class="data-cell monospace text-right")
-							- var currencyValue = new Decimal(block.totalFees).dividedBy(block.tx.length);
+							- var currencyValue = new Decimal(block.totalFees).dividedBy(block.tx.length-1);
 							include ./value-display.pug
 							
 						td(class="data-cell monospace text-right") #{block.size.toLocaleString()}
