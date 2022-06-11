@@ -113,6 +113,24 @@ block content
 					div(class=networkSummaryColumnClass)
 						div(class="float-left", style="height: 40px; width: 40px;")
 							span
+								i(class="fas fa-unlock-alt fa-2x mr-2", style="margin-top: 6px; margin-left: 3px;")
+
+						span(class="font-weight-bold") Total / Max. Amount
+						- var currencyValue = new Decimal(getblockchaininfo.total_amount);
+						p.monospace
+							br(clear="all")
+							span
+							small.ml-1 &nbsp;&nbsp;&nbsp;
+							include ./includes/value-display.pug
+							br(clear="all")
+							span
+							small.ml-1 &nbsp;&nbsp;
+							- currencyValue = new Decimal(21000000000);
+							include ./includes/value-display.pug
+
+					div(class=networkSummaryColumnClass)
+						div(class="float-left", style="height: 40px; width: 40px;")
+							span
 								i(class="fas fa-bolt fa-2x mr-2", style="margin-top: 6px; margin-left: 6px;")
 
 						- var chainworkData = utils.formatLargeNumber(parseInt("0x" + getblockchaininfo.chainwork), 2);
