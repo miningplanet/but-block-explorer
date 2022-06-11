@@ -22,7 +22,7 @@ function updateStats() {
 		console.log("hashrate element %d", checkEle.length);
 		if(checkEle && checkEle.length > 0) {
 			$.ajax({url: '/ext/summary', success: function(json){
-				updateElementValue("hashrate", json.hashrate.rate);
+				updateElementValue("hashrate", json.hashrate.rate + ' ');
 				updateElementAttr("hashUnit", "data-original-title", json.hashrate.unit);
 				updateElementValue("txStats", json.txcount);
 				updateElementValue("mempoolCount", json.mempool.count + " tx");
@@ -35,5 +35,5 @@ function updateStats() {
 				updateElementValue("price", json.price);
 			}});
 		}
-	}, 180000);
+	}, 10000);
 }

@@ -138,7 +138,11 @@ class Session {
 
 					result.chainTxStats = chainTxStats;
 				}
-				self.res.send(utils.getStatsSummary(result));
+
+				var curr = self.req.session.currencyFormatType ? self.req.session.currencyFormatType : "usd"
+				var formatInfo = utils.getCurrencyFormatInfo(curr);
+
+				self.res.send(utils.getStatsSummary(result, curr, formatInfo));
 				if(self.next) {
 					self.next();
 				}

@@ -1,11 +1,11 @@
 extends layout
 
 block headContent
-	title Home
+	title Butkoin Explorer
 	
 block content
-	h1.h3 #{coinConfig.siteTitle}
-	hr
+	//- h1.h3 #{coinConfig.siteTitle}
+	//- hr
 
 	if (getblockchaininfo == null)
 		div(class="alert alert-warning")
@@ -158,8 +158,11 @@ block content
 
 							span.font-weight-bold.border-dotted(data-toggle="tooltip", title=("Exchange-rate data from: " + coinConfig.exchangeRateData.jsonUrl)) Exchange Rate 
 
+							- var curr = session.currencyFormatType ? session.currencyFormatType : "usd"
+							- var formatInfo = utils.getCurrencyFormatInfo(curr);
+							
 							if (global.exchangeRates)
-								p(id="price" class="lead") #{utils.formatExchangedCurrency(1.0, "btc", "฿", 8)}/#{utils.formatExchangedCurrency(1.0, "usd", "$", 6)}
+								p(id="price" class="lead") #{utils.formatExchangedCurrency(1.0, curr, formatInfo.symbol, 6)}
 							else
 								p(id="price" class="lead") -
 
@@ -215,7 +218,7 @@ block content
 											each item, index in chainTxStats
 												tr(class="monospace")
 													td #{chainTxStatsLabels[index]}
-													td #{item.window_tx_count.toLocaleString()}
+													td #{item.window_tx_count}
 													td #{new Decimal(item.txrate).toDecimalPlaces(4)}
 
 

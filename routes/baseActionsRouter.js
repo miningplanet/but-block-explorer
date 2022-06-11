@@ -149,6 +149,7 @@ router.get("/peers", function(req, res, next) {
 	});
 });
 
+/*
 router.post("/connect", function(req, res, next) {
 	var host = req.body.host;
 	var port = req.body.port;
@@ -180,7 +181,9 @@ router.post("/connect", function(req, res, next) {
 
 	res.redirect("/");
 });
+*/
 
+/*
 router.get("/disconnect", function(req, res, next) {
 	res.cookie('rpc-host', "");
 	res.cookie('rpc-port', "");
@@ -199,6 +202,7 @@ router.get("/disconnect", function(req, res, next) {
 
 	res.redirect("/");
 });
+*/
 
 router.get("/changeSetting", function(req, res, next) {
 	if (req.query.name) {
@@ -910,6 +914,7 @@ router.post("/rpc-terminal", function(req, res, next) {
 	});
 });
 
+/*
 router.get("/rpc-browser", function(req, res, next) {
 	if (!config.demoSite && !req.authenticated) {
 		res.send("RPC Terminal / Browser require authentication. Set an authentication password via the 'BTCEXP_BASIC_AUTH_PASSWORD' environment variable (see .env-sample file for more info).");
@@ -1045,6 +1050,7 @@ router.get("/rpc-browser", function(req, res, next) {
 		next();
 	});
 });
+*/
 
 router.get("/unconfirmed-tx", function(req, res, next) {
 	var limit = config.site.browseBlocksPageSize;

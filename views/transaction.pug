@@ -26,7 +26,7 @@ block content
 		- DecimalRounded = Decimal.clone({ precision: 4, rounding: 2 })
 
 		- var totalInputValue = new Decimal(0);
-		if (result.getrawtransaction.vin[0].coinbase)
+		if (result.getrawtransaction.vin[0] && result.getrawtransaction.vin[0].coinbase)
 			- totalInputValue = totalInputValue.plus(new Decimal(coinConfig.blockRewardFunction(result.getblock.height)));
 		each txInput, txInputIndex in result.txInputs
 			if (txInput)
@@ -124,7 +124,7 @@ block content
 							div(class="summary-table-label") Size
 							div(class="summary-table-content monospace")
 								if (result.getrawtransaction.vsize != result.getrawtransaction.size)
-									span #{result.getrawtransaction.vsize.toLocaleString()} 
+									span #{result.getrawtransaction.vsize}
 									span.border-dotted(title="Virtual bytes", data-toggle="tooltip") vB
 									br
 									span(class="text-muted") (#{result.getrawtransaction.size.toLocaleString()} B)
@@ -161,7 +161,7 @@ block content
 										strong(class="text-success") #{result.getrawtransaction.confirmations.toLocaleString()}
 
 
-						if (result.getrawtransaction.vin[0].coinbase)
+						if (result.getrawtransaction.vin[0] && result.getrawtransaction.vin[0].coinbase)
 							div(class="row")
 								div(class="summary-table-label") Fees Collected
 								div(class="summary-table-content monospace")
@@ -210,7 +210,7 @@ block content
 								div(class="row")
 									div(class="summary-table-label") Fee Rate
 									div(class="summary-table-content monospace")
-										if (result.getrawtransaction.vsize != result.getrawtransaction.size)
+										if (result.getrawtransaction.vsize && result.getrawtransaction.size && result.getrawtransaction.vsize != result.getrawtransaction.size)
 											span #{utils.addThousandsSeparators(new DecimalRounded(totalInputValue).minus(totalOutputValue).dividedBy(result.getrawtransaction.vsize).times(100000000))} sat/
 											span.border-dotted(title="Virtual bytes" data-toggle="tooltip") vB
 											br
@@ -218,7 +218,7 @@ block content
 										span(class="text-muted") (#{utils.addThousandsSeparators(new DecimalRounded(totalInputValue).minus(totalOutputValue).dividedBy(result.getrawtransaction.size).times(100000000))} sat/B)
 
 
-				if (result.getrawtransaction.vin[0].coinbase)
+				if (result.getrawtransaction.vin[0] && result.getrawtransaction.vin[0].coinbase)
 					div(class="card mb-3 shadow-sm")
 						div(class="card-header")
 							h2(class="h6 mb-0") Coinbase

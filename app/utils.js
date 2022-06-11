@@ -202,7 +202,7 @@ function formatExchangedCurrency(amount, exchangeType, symbol="$", decimal=2) {
 	if (global.exchangeRates != null && global.exchangeRates[exchangeType.toLowerCase()] != null) {
 		var dec = new Decimal(amount);
 		dec = dec.times(global.exchangeRates[exchangeType.toLowerCase()]);
-		return symbol + Number(dec).toFixed(decimal);
+		return symbol + ' ' + Number(dec).toFixed(decimal);
 	}
 
 	return "";
@@ -553,13 +553,15 @@ function buildQrCodeUrl(str, results) {
 	});
 }
 
-function getStatsSummary(json) {
+function getStatsSummary(json, curr, formatInfo) {
 	var hashrateData = formatLargeNumber(json.miningInfo.networkhashps, 3);
 	var mempoolBytesData = formatLargeNumber(json.mempoolInfo.usage, 2);
 	var chainworkData = formatLargeNumber(parseInt("0x" + json.getblockchaininfo.chainwork), 2);
 	var difficultyData = formatLargeNumber(json.getblockchaininfo.difficulty, 3);
-	var sizeData = formatLargeNumber(json.getblockchaininfo.size_on_disk, 2);
-	var price = `${formatExchangedCurrency(1.0, "btc", "฿", 8)}/${formatExchangedCurrency(1.0, "usd", "$", 6)}`
+	// var sizeData = formatLargeNumber(json.getblockchaininfo.size_on_disk, 2);
+	var sizeData = json.getblockchaininfo.size_on_disk;
+	var price = `${formatExchangedCurrency(1.0, curr, formatInfo.symbol, 6)}`
+
 	mempoolBytesData[1].abbreviation = mempoolBytesData[1].abbreviation ? mempoolBytesData[1].abbreviation : "";
 	return {
 		hashrate : { 
@@ -579,9 +581,10 @@ function getStatsSummary(json) {
 			num : difficultyData[0],
 			exp : difficultyData[1].exponent
 		},
-		chainSize : `${sizeData[0]} ${sizeData[1].abbreviation}B`,
+		chainSize : `0`,
 		price : price
 	}
+	// chainSize : `${sizeData[0]} ${sizeData[1].abbreviation}B`
 	/*
 	updateElementValue("hashrate", hashrateData[0]);
 	updateElementAttr("hashUnit", "data-original-title", `${hashrateData[1].abbreviation}H = ${hashrateData[1].name}-hash (x10^${hashrateData[1].exponent})`);
