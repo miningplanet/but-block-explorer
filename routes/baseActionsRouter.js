@@ -1132,7 +1132,7 @@ router.get("/about", function(req, res, next) {
 });
 
 router.get("/changelog", function(req, res, next) {
-	res.locals.changelogHtml = marked(global.changelogMarkdown);
+	res.locals.changelogHtml = marked.parse(global.changelogMarkdown);
 
 	res.render("changelog");
 
