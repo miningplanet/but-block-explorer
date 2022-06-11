@@ -1,14 +1,17 @@
-var redis = require("redis");
-var bluebird = require("bluebird");
-
-var config = require("./config.js");
-var utils = require("./utils.js");
-
+var bluebird = require("bluebird")
+var redis = bluebird.promisifyAll(require("redis"))
+var config = require("./config.js")
+var utils = require("./utils.js")
 var redisClient = null;
-if (config.redisUrl) {
-	bluebird.promisifyAll(redis.RedisClient.prototype);
 
-	redisClient = redis.createClient({url:config.redisUrl});
+if (config.redisUrl) {
+	redisClient = bluebird.promisifyAll(redis.createClient({url:config.redisUrl}));
+	//(async () => {
+		redisClient.on('error', err => { console.log('Error ' + err) })
+		console.debug('Connect to redis butkoin ' + redisClient.options.url)
+		redisClient.connect()
+		console.debug('Connected to redis butkoin ' + redisClient.options.url)
+	//})();
 }
 
 function onCacheEvent(cacheType, hitOrMiss, cacheKey) {
@@ -16,9 +19,9 @@ function onCacheEvent(cacheType, hitOrMiss, cacheKey) {
 }
 
 var redisCache = {
-	get:function(key) {
-		return new Promise(function(resolve, reject) {
-			redisClient.getAsync(key).then(function(result) {
+	get:async function(key) {
+		return await new Promise(function(resolve, reject) {
+			redisClient.get(key).then(function(result) {
 				if (result == null) {
 					onCacheEvent("redis", "miss", key);
 
@@ -32,14 +35,14 @@ var redisCache = {
 				resolve(JSON.parse(result));
 
 			}).catch(function(err) {
-				utils.logError("328rhwefghsdgsdss", err);
+				utils.logError("ERROR in redis-cli:", err);
 
 				reject(err);
 			});
 		});
 	},
 	set:function(key, obj, maxAgeMillis) {
-		redisClient.set(key, JSON.stringify(obj), "PX", maxAgeMillis);
+		redisClient.set(key, JSON.stringify(obj));
 	}
 };
 

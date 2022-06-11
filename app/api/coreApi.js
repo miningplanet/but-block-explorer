@@ -81,7 +81,22 @@ function getGenesisCoinbaseTransactionId() {
 	return coins[config.coin].genesisCoinbaseTransactionId;
 }
 
+function tryCacheOnly(cache, cacheKey) {
+	return new Promise(function(resolve, reject) {
+		var cacheResult = null;
+		var finallyFunc = function() {
+			resolve(cacheResult);
+		};
 
+		cache.get(cacheKey).then(function(result) {
+			cacheResult = result;
+			finallyFunc();
+		}).catch(function(err) {
+			utils.logError("nds9fc2eg621tf3", err, {cacheKey:cacheKey});
+			finallyFunc();
+		});
+	});
+}
 
 function tryCacheThenRpcApi(cache, cacheKey, cacheMaxAge, rpcApiFunction, cacheConditionFunction) {
 	//debugLog("tryCache: " + cacheKey + ", " + cacheMaxAge);
@@ -946,6 +961,7 @@ function logCacheSizes() {
 }
 
 module.exports = {
+	tryCacheOnly: tryCacheOnly,
 	getGenesisBlockHash: getGenesisBlockHash,
 	getGenesisCoinbaseTransactionId: getGenesisCoinbaseTransactionId,
 	getBlockchainInfo: getBlockchainInfo,

@@ -138,6 +138,7 @@ module.exports = {
 	electrumXServers:electrumXServers,
 
 	redisUrl:process.env.BTCEXP_REDIS_URL,
+	redisPermanentCache:process.env.BTCEXP_REDIS_PERMANENT_CACHE,
 
 	site: {
 		blockTxPageSize:20,
