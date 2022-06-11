@@ -1,6 +1,7 @@
 body {
 	font-size: 14px;
 	font-family: "Ubuntu", sans-serif;
+	background-color: transparent !important;
 	/*font: 14px 'Open Sans', "Lucida Grande", Helvetica, Arial, sans-serif;*/
 }
 
@@ -98,7 +99,22 @@ strong {
 	margin-bottom: 20px;
 }
 
-@media (min-width: 576px) {
+body.bg-dark { background-color: transparent !important; }
+body nav.navbar { position: absolute !important; background: transparent !important }
+body #navbarNav { background: #111 !important }
+div#sub-menu { display: none !important }
+div.card { position: relative; width: 100%; margin: 0.5rem auto 0.2rem auto !important; padding: 0 0.45rem; background-image: linear-gradient(to top left, #000 45%, #292a2f 100%); box-shadow: 1rem 1rem 1rem 1rem #191a1f inset; border: solid 1px #111; border-radius: 0.75rem}
+div.card-header { background: transparent !important }
+footer { margin: -1.2rem auto 0.2rem auto !important }
+div.container { max-width: 99%; padding-left: 0 !important; padding-right: 0 !important }
+div.logo { margin: 0.2rem 0.65rem 0 -1rem !important }
+section div.info h2 { margin-top: 1.5rem !important }
+div.table-responsive {  position: relative; opacity: 1 !important; z-index: 100 }
+
+table td span.bg-primary { background: transparent !important }
+div.alert-primary { background: transparent !important }
+
+@media only screen and (min-width: 576px) {
 	.summary-table-label {
 		max-width: 100%;
 		text-align: left;
@@ -123,7 +139,7 @@ strong {
 	.tx-io-value { max-width: 100%; }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 	.summary-table-label {
 		max-width: 18%;
 		text-align: right;
@@ -148,7 +164,7 @@ strong {
 	.tx-io-value { max-width: 40%; text-align: right; padding-right: 25px; }
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
 	.summary-table-label {
 		max-width: 15%;
 		text-align: right;
@@ -173,11 +189,7 @@ strong {
 	.tx-io-value { max-width: 40%; text-align: right; padding-right: 25px; }
 }
 
-@media (min-width: 1200px) {
-	.container {
-		max-width: 1160px;
-	}
-
+@media only screen and (min-width: 1200px) {
 	.summary-table-label {
 		max-width: 11%;
 		text-align: right;
@@ -200,13 +212,12 @@ strong {
 	.tx-io-content { max-width: 90.5%; }
 	.tx-io-desc { max-width: 61%; }
 	.tx-io-value { max-width: 39%; text-align: right; padding-right: 25px; }
+
+	div.container { max-width: 1160px; }
+	div.logo { margin: 0.2rem 0.65rem 0 0.25rem !important }
 }
 
-@media (min-width: 1920px) {
-	.container {
-		max-width: 1800px;
-	}
-
+@media only screen and (min-width: 1930px) {
 	.summary-table-label {
 		max-width: 8%;
 		text-align: right;

@@ -3,6 +3,76 @@
 * Version number in footer
 * `/changelog` linked in footer
 
+#### v1.3.9
+###### 2022-06-11
+
+* Add link to changelog
+* Fix block reward function and average fee calculation
+
+#### v1.3.8
+###### 2022-05-13
+
+* Show current user currency in exchange rate widged for https://explorer.butkoin.com
+* Update mining pools configuration
+* Upgrade Butkoin archive node to But Core v1.3.0.1-70472e220
+
+#### v1.3.7
+###### 2022-05-10
+
+* Add more configuration option for exchange rates for CNY, INR and RUB.
+* Add redundant ElectrumX address API
+
+#### v1.3.6
+###### 2022-04-29
+
+* Add configuration option for exchange rates data (default to https://api.butkoin.com/v1/butkoin/getcurrentprice) and extended to USD, EUR, JPY, GPB and BRL.
+* Fix exchange rate widged for https://explorer.butkoin.com
+* Fix layout
+
+#### v1.3.5
+###### 2022-04-27
+
+* Fix last send / rec. and add ping for https://explorer.butkoin.com/peers 
+* Fix layout
+
+#### v1.3.4
+###### 2022-03-31
+
+* Add butkoin.com donation address XvrHWjw7zd4CQZkxbiZGt3dGE53vjrUGrs to footer
+* Add ElectrumX address API
+
+#### v1.3.3
+###### 2022-02-16
+
+* Add mining algorithm to blocks table
+* Fix layout
+
+#### v1.3.2
+###### 2022-01-29
+
+* Add total / max. amount widged for https://explorer.butkoin.com
+* Fix total transactions for https://explorer.butkoin.com
+
+#### v1.3.1
+###### 2021-12-22
+
+* Add butkoin.com CSS layout
+* Fix null pointer for tx view.
+
+#### v1.3.0
+###### 2021-12-15
+
+* Fork from https://github.com/Raptor3um/rpc-explorer
+* Upgrade to nodejs v14.17.2 (LTS) npm 6.14.13
+* Upgrade to redis 4
+* Upgrade vulnerable modules
+* Reflect Butkoin
+
+#### v1.2.0
+###### 2019-12-04
+
+* Forked from https://github.com/Raptor3um/rpc-explorer to https://github.com/Butkoin/but-block-explorer/, last commit 498b350b62afb745500a7c32f141a2538337510b by @npq7721 and others.
+
 #### v1.1.2 
 ###### 2019-10-17
 

@@ -5,8 +5,8 @@ html(lang="en")
 		meta(name="csrf-token", content=csrfToken)
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no")
 		
-		link(rel="stylesheet", href="/css/fonts.css", integrity="sha384-XOmmu8j3C2MFUXRVGg8VWYNwlhEkSNb0rW/4e7bi3F56S6PejEmBUQDGZofQyjbL")
-		link(rel="stylesheet", href="/css/highlight.min.css", integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4")
+		//- link(rel="stylesheet", href="/css/fonts.css", integrity="sha384-XOmmu8j3C2MFUXRVGg8VWYNwlhEkSNb0rW/4e7bi3F56S6PejEmBUQDGZofQyjbL")
+		//- link(rel="stylesheet", href="/css/highlight.min.css", integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4")
 
 
 		if (session.uiTheme && session.uiTheme == "dark")
@@ -18,6 +18,7 @@ html(lang="en")
 
 		
 		link(rel='stylesheet', href='/css/styling.css')
+		link(rel='stylesheet', href='https://butkoin.com/butk.min.css')
 
 		link(rel="icon", href=("/img/logo/butk.svg"))
 		link(rel="shortcut icon" href=("/img/logo/butk.svg") type="image/x-icon")
@@ -25,14 +26,17 @@ html(lang="en")
 			title Explorer
 	- utils.formatLargeNumber(10000000, 3);		
 	body(class="bg-dark")
+		div(id="stars")
+		div(id="stars2")
+		div(id="stars3")
+
 		nav(class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top")
 			div(class="container")
-				a(class="navbar-brand", href="/")
-					span
-						if (coinConfig.logoUrl)
-							img(src=coinConfig.logoUrl, class="header-image", alt="logo")
-						span #{coinConfig.siteTitle}
-						
+				div(class="logo", style="width: 2.75rem; height: 2.75rem; margin: 0.2rem 0.65rem auto 0.25rem")
+				div(class="nav")
+					a(class="navbar-brand", href="https://butkoin.com")  Home
+					a(class="navbar-brand", href="https://api.butkoin.com/api-docs")  API
+					a(class="navbar-brand", href="https://explorer.butkoin.com")  Explorer
 				button(type="button", class="navbar-toggler navbar-toggler-right", data-toggle="collapse", data-target="#navbarNav", aria-label="collapse navigation")
 					span(class="navbar-toggler-icon")
 					
@@ -113,7 +117,7 @@ html(lang="en")
 		if (session.uiTheme && session.uiTheme == "dark")
 			- bodyBgColor = "#0c0c0c;";
 
-		div(class="pb-4 pt-3 pt-md-4", style=("background-color: " + bodyBgColor))
+		div(class="pb-4 pt-3 pt-md-4", style=("background-color: transparent !important"))
 			div(class="container px-2 px-sm-3")
 				if (pageErrors && pageErrors.length > 0)
 					include includes/page-errors-modal.pug
