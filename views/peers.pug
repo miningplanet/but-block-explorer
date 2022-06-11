@@ -92,11 +92,12 @@ block content
 								th(class="data-header") Version
 								th(class="data-header") Address
 								th(class="data-header") Services
+								th(class="data-header") Ping
 
 								if (peerIpSummary.ips)
 									th(class="data-header") Location
 
-								th(class="data-header") Last Send / Receive
+								th(class="data-header") Last Send / Rec.
 
 						tbody
 							each item, index in peerSummary.getpeerinfo
@@ -108,7 +109,8 @@ block content
 
 									td(class="data-cell monospace") #{item.subver}
 									td(class="data-cell monospace") #{item.addr}
-									td(class="data-cell monospace") #{item.services}
+									td(class="data-cell monospace") #{parseInt(item.services)}
+									td(class="data-cell monospace") #{item.pingtime}
 
 									if (peerIpSummary.ips)
 										td(class="data-cell monospace")

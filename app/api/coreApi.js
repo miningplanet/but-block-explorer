@@ -247,7 +247,7 @@ function getTxCountStats(dataPtCount, blockStart, blockEnd) {
 
 function getPeerSummary() {
 	return new Promise(function(resolve, reject) {
-		tryCacheThenRpcApi(miscCache, "getpeerinfo", 1000, rpcApi.getPeerInfo).then(function(getpeerinfo) {
+		tryCacheThenRpcApi(miscCache, "getPeerInfo", 1000, rpcApi.getPeerInfo).then(function(getpeerinfo) {
 			var result = {};
 			result.getpeerinfo = getpeerinfo;
 
