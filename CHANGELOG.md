@@ -8,6 +8,7 @@
 
 * Add link to changelog
 * Fix block reward function and average fee calculation
+* Library updates marked@4.0.16 redis@4.1.0 request@2.88.2 async@3.2.4 cookie-parser@1.4.6 less@4.1.3 express@4.18.1 express-rate-limit@6.4.0 express-session@1.17.3 body-parser@1.20.0 morgan@1.10.0 moment-duration-format@2.3.2 debug@4.3.4 crypto-js@4.1.1 decimal.js@10.3.1 csurf@1.11.0
 
 #### v1.3.8
 ###### 2022-05-13
