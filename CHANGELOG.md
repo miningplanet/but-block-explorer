@@ -8,7 +8,9 @@
 
 * Restore BTC coin configuration btc.js
 * Add total transaction output to blocks table
-* Small fixes
+* Change average fee to total fee in blocks table
+* Fix load arbitrary number of blocks on blocks page
+* Several small fixes
 * Reflect Butkoin
 
 #### v1.3.9

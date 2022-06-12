@@ -231,6 +231,8 @@ router.get("/blocks", function(req, res, next) {
 		sort = req.query.sort;
 	}
 
+	limit = Math.min(limit, 20);
+
 	res.locals.limit = limit;
 	res.locals.offset = offset;
 	res.locals.sort = sort;
@@ -260,7 +262,7 @@ router.get("/blocks", function(req, res, next) {
 
 			coreApi.getBlockStatsByHeight(blockHeights).then(function(blockstats) {
 				res.locals.blockstats = blockstats
-				
+
 				res.render("blocks");
 
 				next();
