@@ -9,8 +9,8 @@ div(class="table-responsive")
 				th(class="data-header") Miner
 				th(class="data-header") Algorithm
 				th(class="data-header text-right") Tx.
-				th(class="data-header text-right") Total out
-				th(class="data-header text-right") Average Fee
+				th(class="data-header text-right") Total Out
+				th(class="data-header text-right") Fees
 				th(class="data-header text-right") Size (b)
 
 				if (blocks && blocks.length > 0 && blocks[0].weight)
@@ -45,7 +45,7 @@ div(class="table-responsive")
 							include ./value-display.pug
 
 						td(class="data-cell monospace text-right")
-							- var currencyValue = new Decimal(block.totalFees).dividedBy(block.tx.length-1);
+							- var currencyValue = new Decimal(block.totalFees);
 							include ./value-display.pug
 							
 						td(class="data-cell monospace text-right") #{block.size.toLocaleString()}
