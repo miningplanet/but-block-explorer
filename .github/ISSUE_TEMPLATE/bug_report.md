@@ -13,16 +13,16 @@ A clear and concise description of what the bug is.
 
 **Environment (please complete the following information):**
 
- - Bitcoin Core / Node Version [e.g. 0.16.3]
- - NodeJS Version [e.g. 9.x]
- - Browser [e.g. chrome, safari]
- - Code Version / Commit [e.g. ab6cde8]
+ - ButKoin Core Green / Node Version [e.g. 1.3.0.1]
+ - NodeJS Version [e.g. 14.17.x]
+ - Browser [e.g. chrome, safari, mozilla]
+ - Code Version / Commit [e.g. 0abc6ed8]
  
 **Configuration file content**
 
 Please include the content from the following files. **BE SURE TO MODIFY YOUR CREDENTIALS BEFORE SUBMITTING!!!**
- - bitcoin.conf
- - Your btc-rpc-explorer environment configuration (either `$WORKING_DIR/.env` or `~/.config/btc-rpc-explorer.env`)
+ - but.conf
+ - Your but-block-explorer environment configuration (either `$WORKING_DIR/.env` or `~/.config/but-block-explorer.env`)
 
 **To Reproduce**
 

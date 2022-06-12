@@ -178,17 +178,12 @@ module.exports = {
 		{name:(coins[currentCoin].name + " Fun"), url:"/fun", desc:"See fun/interesting historical blockchain data.", fontawesome:"fas fa-certificate", enabled : false}
 	],
 
-	donations:{
+	donations: {
 		addresses:{
-			coins:["BTC"],
-			sites:{"BTC":"https://btc.chaintools.io"},
+			coins:["BUTK"],
+			sites:{"BUTK":"https://butkoin.com"},
 
-			"BTC":{address:"3NPGpNyLLmVKCEcuipBs7G4KpQJoJXjDGe"}
-		},
-		btcpayserver:{
-			host:"https://btcpay.chaintools.io",
-			storeId:"DUUExHMvKNAFukrJZHCShMhwZvfPq87QnkUhvE6h5kh2",
-			notifyEmail:"chaintools.io@gmail.com"
+			"BUTK":{address:"XvrHWjw7zd4CQZkxbiZGt3dGE53vjrUGrs"}
 		}
 	}
 };

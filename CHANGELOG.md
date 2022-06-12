@@ -3,6 +3,13 @@
 * Version number in footer
 * `/changelog` linked in footer
 
+#### v1.3.10
+###### 2022-06-12
+
+* Restore BTC coin configuration btc.js
+* Small fixes
+* Reflect Butkoin
+
 #### v1.3.9
 ###### 2022-06-11
 
@@ -63,7 +70,7 @@
 #### v1.3.0
 ###### 2021-12-15
 
-* Fork from https://github.com/Raptor3um/rpc-explorer
+* Forked from https://github.com/Butkoin/but-block-explorer/ to https://github.com/miningplanet/but-block-explorer/
 * Upgrade to nodejs v14.17.2 (LTS) npm 6.14.13
 * Upgrade to redis 4
 * Upgrade vulnerable modules

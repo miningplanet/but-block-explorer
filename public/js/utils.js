@@ -19,7 +19,7 @@ function updateElementAttr(id, attrName, value) {
 function updateStats() {
 	setInterval( function() {
 		var checkEle = $("#hashrate");
-		console.log("hashrate element %d", checkEle.length);
+		/*console.log("hashrate element %d", checkEle.length);*/
 		if(checkEle && checkEle.length > 0) {
 			$.ajax({url: '/ext/summary', success: function(json){
 				updateElementValue("hashrate", json.hashrate.rate + ' ');

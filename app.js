@@ -7,7 +7,7 @@ var path = require('path');
 var dotenv = require("dotenv");
 var fs = require('fs');
 
-var configPaths = [ path.join(os.homedir(), '.config', 'btc-rpc-explorer.env'), path.join(process.cwd(), '.env') ];
+var configPaths = [ path.join(os.homedir(), '.config', 'but-block-explorer.env'), path.join(process.cwd(), '.env') ];
 configPaths.filter(fs.existsSync).forEach(path => {
 	console.log('Loading env file:', path);
 	dotenv.config({ path });
@@ -57,7 +57,7 @@ var app = express();
 
 if(process.env.BTCEXP_HTTPS) {
    var helmet = require("helmet");
-   app.use(helmet());
+   app.use(helmet({}));
 }
 
 
