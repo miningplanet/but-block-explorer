@@ -591,6 +591,28 @@ function getBlockByHeight(blockHeight) {
 	});
 }
 
+function getBlockStatByHeight(blockHeight) {
+	return tryCacheThenRpcApi(blockCache, "getBlockStatByHeight-" + blockHeight, 3600000, function() {
+		return rpcApi.getBlockStatByHeight(blockHeight);
+	});
+}
+
+function getBlockStatsByHeight(blockHeights) {
+	return new Promise(function(resolve, reject) {
+		var promises = [];
+		for (var i = 0; i < blockHeights.length; i++) {
+			promises.push(getBlockStatByHeight(blockHeights[i]));
+		}
+
+		Promise.all(promises).then(function(results) {
+			resolve(results);
+
+		}).catch(function(err) {
+			reject(err);
+		});
+	});
+}
+
 function getBlock(blockHeight) {
 	return tryCacheThenRpcApi(blockCache, "getBlock-" + blockHeight, 3600000, function() {
 		return rpcApi.getBlock(blockHeight);
@@ -970,6 +992,8 @@ module.exports = {
 	getMempoolInfo: getMempoolInfo,
 	getMiningInfo: getMiningInfo,
 	getBlockByHeight: getBlockByHeight,
+	getBlockStatByHeight: getBlockStatByHeight,
+	getBlockStatsByHeight: getBlockStatsByHeight,
 	getBlocksByHeight: getBlocksByHeight,
 	getBlockByHash: getBlockByHash,
 	getBlocksByHash: getBlocksByHash,

@@ -69,24 +69,28 @@ class Session {
 			coreApi.getBlocksByHeight(blockHeights).then(function(latestBlocks) {
 				self.res.locals.latestBlocks = latestBlocks;
 
-				Promise.all(promises).then(function(promiseResults) {
-					self.res.locals.mempoolInfo = promiseResults[0];
-					self.res.locals.miningInfo = promiseResults[1];
+				coreApi.getBlockStatsByHeight(blockHeights).then(function(latestBlockStats) {
+					self.res.locals.latestBlockStats = latestBlockStats;
 
-					if (getblockchaininfo.chain !== 'regtest') {
-						self.res.locals.txStats = promiseResults[2];
+					Promise.all(promises).then(function(promiseResults) {
+						self.res.locals.mempoolInfo = promiseResults[0];
+						self.res.locals.miningInfo = promiseResults[1];
 
-						var chainTxStats = [];
-						for (var i = 0; i < self.res.locals.chainTxStatsLabels.length; i++) {
-							chainTxStats.push(promiseResults[i + 3]);
+						if (getblockchaininfo.chain !== 'regtest') {
+							self.res.locals.txStats = promiseResults[2];
+
+							var chainTxStats = [];
+							for (var i = 0; i < self.res.locals.chainTxStatsLabels.length; i++) {
+								chainTxStats.push(promiseResults[i + 3]);
+							}
+
+							self.res.locals.chainTxStats = chainTxStats;
 						}
 
-						self.res.locals.chainTxStats = chainTxStats;
-					}
+						self.res.render("index");
 
-					self.res.render("index");
-
-					self.next();
+						self.next();
+					});
 				});
 			});
 		}).catch(function(err) {

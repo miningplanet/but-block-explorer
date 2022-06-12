@@ -139,7 +139,7 @@ function getBlockByHeight(blockHeight) {
 	});
 }
 
-function getBlockStats(blockHeight) {
+function getBlockStatByHeight(blockHeight) {
 	return getRpcDataWithParams({method:"getblockstats", parameters:[blockHeight]});
 }
 
@@ -361,7 +361,7 @@ module.exports = {
 	getMempoolTxids: getMempoolTxids,
 	getMiningInfo: getMiningInfo,
 	getBlockByHeight: getBlockByHeight,
-	getBlockStats: getBlockStats,
+	getBlockStatByHeight: getBlockStatByHeight,
 	getBlockByHash: getBlockByHash,
 	getRawTransaction: getRawTransaction,
 	getUtxo: getUtxo,

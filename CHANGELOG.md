@@ -7,6 +7,7 @@
 ###### 2022-06-12
 
 * Restore BTC coin configuration btc.js
+* Add total transaction output to blocks table
 * Small fixes
 * Reflect Butkoin
 

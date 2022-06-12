@@ -258,9 +258,13 @@ router.get("/blocks", function(req, res, next) {
 		coreApi.getBlocksByHeight(blockHeights).then(function(blocks) {
 			res.locals.blocks = blocks;
 
-			res.render("blocks");
+			coreApi.getBlockStatsByHeight(blockHeights).then(function(blockstats) {
+				res.locals.blockstats = blockstats
+				
+				res.render("blocks");
 
-			next();
+				next();
+			});
 		});
 	}).catch(function(err) {
 		res.locals.userMessage = "Error: " + err;
