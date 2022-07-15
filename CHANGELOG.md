@@ -3,7 +3,11 @@
 * Version number in footer
 * `/changelog` linked in footer
 
+#### v1.3.11
+###### 2022-07-15
+
 * Library updates marked@4.0.18 redis@4.2.0 helmet@3.23.3 meow@3.1.10 moment@2.29.4 qrcode@1.5.1 simple-git@3.10.0
+
 #### v1.3.10
 ###### 2022-06-12
 
