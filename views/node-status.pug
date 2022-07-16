@@ -35,8 +35,8 @@ block content
 					div(class="card-body")
 						table(class="table details-table mb-0")
 							tr
-								td(class="properties-header") Host : Port
-								td(class="monospace") #{global.rpcClient.host + " : " + global.rpcClient.port}
+								td(class="properties-header") Host
+								td(class="monospace") #{process.env.BTCEXP_EXTERNAL_HOST}
 
 							tr
 								td(class="properties-header") Chain

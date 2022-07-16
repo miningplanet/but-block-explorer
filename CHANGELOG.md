@@ -8,6 +8,7 @@
 
 * Add ipstack - Free IP Geolocation API - https://ipstack.com
 * Render OpenStreetMap map for peers view - https://www.openstreetmap.org
+* Add configuration option for host in node status view
 * Update shrinkwrap
 
 #### v1.3.11

@@ -10,6 +10,7 @@ debug(`Set max_old_space_size to ${(process.env.BTCEXP_OLD_SPACE_MAX_SIZE || 102
 
 app.set('port', process.env.PORT || process.env.BTCEXP_PORT || 3002);
 app.set('host', process.env.BTCEXP_HOST || '127.0.0.1');
+app.set('externalIP', process.env.BTCEXP_EXTERNAL_HOST || 'https://explorer.butkoin.com');
 
 var server = app.listen(app.get('port'), app.get('host'), function() {
 	debug('Express server listening on ' + server.address().address + ':' + server.address().port);
