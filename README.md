@@ -1,4 +1,4 @@
-# RPC Explorer
+# Butkoin RPC Explorer
 
 [![npm version][npm-ver-img]][npm-ver-url] [![NPM downloads][npm-dl-img]][npm-dl-url]
 
@@ -16,6 +16,7 @@ Live demo available at: [https://explorer.butkoin.com](https://explorer.butkoin.
 * Browse blocks
 * View block details
 * View transaction details, with navigation "backward" via spent transaction outputs
+* View coin prices in various currencies like USD, EUR, CNY, INR, JPY, GBP, RUB or BRL.
 * View JSON content used to generate most pages
 * Search by transaction ID, block hash/height, and address
 * Optional transaction history for addresses by querying from ElectrumX, blockchain.com, blockchair.com, or blockcypher.com
@@ -73,7 +74,13 @@ See `rpc-explorer --help` for the full list of CLI options.
 
 # Support
 
-* [3Jym9QJLXQyjSSGKS1LCD9LCroPqCGo3Lq](bitcoin:3Jym9QJLXQyjSSGKS1LCD9LCroPqCGo3Lq)
+Donations
+
+Butkoin - [BUTK] - XvrHWjw7zd4CQZkxbiZGt3dGE53vjrUGrs
+
+Raptoreum - [RTM] - RLFvcNYRxM6yeTRwEE4U8YCtC683XUoRwG
+
+Bitoreum - [BTRM] - BqndD9PnCGUrgJ64wzitWYkDYfwyViTsDL
 
 
 [npm-ver-img]: https://img.shields.io/npm/v/btc-rpc-explorer.svg?style=flat
